@@ -1,7 +1,6 @@
 import React from "react";
 
 const BestPokemon = (props) => {
-  console.log(props.abilities);
   return (
     <div>
       <p>My favorite Pokemon is Hitmonlee</p>
