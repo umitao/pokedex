@@ -1,15 +1,19 @@
 import React from "react";
 import Logo from "./Logo";
-import BestPokemon from "./BestPokemon";
+import BestPokemonFetcher from "./BestPokemon";
 import CaughtPokemon from "./CaughtPokemon";
 
 const App = () => {
-  const abilities = ["Anticipation", "Adaptability", "Run-Away"];
+  //const abilities = ["Anticipation", "Adaptability", "Run-Away"];
   const time = new Date().toLocaleDateString();
+  const logWhenClicked = () => {
+    console.log("Clicked!");
+  };
+
   return (
     <div>
-      <Logo appName="Pokedex" />
-      <BestPokemon abilities={abilities} />
+      <Logo handleClick={logWhenClicked} appName="Pokedex" />
+      <BestPokemonFetcher />
       <CaughtPokemon time={time} />
     </div>
   );
