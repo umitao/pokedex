@@ -3,17 +3,14 @@ import React, { useState, useEffect } from "react";
 const BestPokemon = (props) => {
   return (
     <div>
-      <p>My favorite Pokemon is Hitmonlee</p>
-      <ul>
-        <li>{props.pokemon}</li>
-      </ul>
+      <p>My favorite Pokemon is {props.pokemon}</p>
     </div>
   );
 };
 
 const BestPokemonFetcher = () => {
   const [bestPokemon, setBestPokemon] = useState(null);
-  const url = "https://pokeapi.co/api/v2/pokemon/116/";
+  const url = "https://pokeapi.co/api/v2/pokemon/106/";
 
   useEffect(() => {
     fetch(url)
@@ -24,11 +21,7 @@ const BestPokemonFetcher = () => {
       })
       .catch((error) => console.error(error));
   }, []);
-  if (!bestPokemon) {
-    return null;
-  } else {
-    return <BestPokemon pokemon={bestPokemon} />;
-  }
+  return !bestPokemon ? null : <BestPokemon pokemon={bestPokemon} />;
 };
 
 export default BestPokemonFetcher;
