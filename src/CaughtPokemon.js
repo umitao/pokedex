@@ -8,8 +8,7 @@ const CaughtPokemon = (props) => {
     if (pokemonNameInput) {
       caughtPokemon.push(pokemonNameInput);
       setCaughtPokemon(caughtPokemon);
-      setPokemonNameInput(() => "");
-      console.log(pokemonNameInput);
+      setPokemonNameInput("");
     } else {
       return null;
     }
